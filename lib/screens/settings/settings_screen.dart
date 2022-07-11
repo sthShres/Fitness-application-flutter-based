@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +15,6 @@ import 'package:flutter_firebase/screens/sign_in/page/sign_in_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/const/text_constants.dart';
-
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -60,16 +58,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: photoUrl == null
                     ? CircleAvatar(backgroundImage: AssetImage(PathConstants.profile), radius: 60)
                     : CircleAvatar(
-                        child: ClipOval(
-                            child: FadeInImage.assetNetwork(
-                          placeholder: PathConstants.profile,
-                          image: photoUrl!,
-                          fit: BoxFit.cover,
-                          width: 200,
-                          height: 120,
-                        )),
-                        radius: 60,
-                      ),
+                  child: ClipOval(
+                      child: FadeInImage.assetNetwork(
+                        placeholder: PathConstants.profile,
+                        image: photoUrl!,
+                        fit: BoxFit.cover,
+                        width: 200,
+                        height: 120,
+                      )),
+                  radius: 60,
+                ),
               ),
               TextButton(
                   onPressed: () async {
@@ -100,7 +98,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
               ),
             SettingsContainer(
-                onTap: () => launch('https://perpet.io/'), child: Text(TextConstants.terms, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500))),
+                onTap: () => launch(''), child: Text(TextConstants.terms, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500))),
             SettingsContainer(
                 child: Text(TextConstants.signOut, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500)),
                 onTap: () {
@@ -117,15 +115,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                    onPressed: () => launch('https://www.facebook.com/mvtech/'),
+                    onPressed: () => launch('https://www.facebook.com/perpetio/'),
                     style: TextButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.white, elevation: 1),
                     child: Image.asset(PathConstants.facebook)),
                 TextButton(
-                    onPressed: () => launch('https://www.instagram.com/mvtech_gaming/'),
+                    onPressed: () => launch('https://www.instagram.com/perpetio/'),
                     style: TextButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.white, elevation: 1),
                     child: Image.asset(PathConstants.instagram)),
                 TextButton(
-                    onPressed: () => launch('https://twitter.com/ratnashres'),
+                    onPressed: () => launch('https://twitter.com/perpetio'),
                     style: TextButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.white, elevation: 1),
                     child: Image.asset(PathConstants.twitter)),
               ],

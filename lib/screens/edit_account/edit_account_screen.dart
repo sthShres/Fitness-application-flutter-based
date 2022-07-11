@@ -17,7 +17,6 @@ import 'package:flutter_firebase/screens/common_widgets/settings_textfield.dart'
 import 'package:flutter_firebase/screens/edit_account/bloc/edit_account_bloc.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-
 class EditAccountScreen extends StatefulWidget {
   EditAccountScreen({Key? key}) : super(key: key);
 
@@ -68,7 +67,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
       create: (context) => EditAccountBloc(),
       child: BlocConsumer<EditAccountBloc, EditAccountState>(
         buildWhen: (_, currState) =>
-            currState is EditAccountInitial ||
+        currState is EditAccountInitial ||
             currState is EditAccountProgress ||
             currState is EditAccountError ||
             currState is EditPhotoSuccess,
@@ -101,7 +100,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
           child: SizedBox(
             height: height - 140 - MediaQuery.of(context).padding.bottom,
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Center(child: _getImageWidget()),
               SizedBox(height: 15),
               Center(
@@ -126,9 +125,9 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
               ),
               SettingsContainer(
                   child: SettingsTextField(
-                controller: _nameController,
-                placeHolder: TextConstants.fullNamePlaceholder,
-              )),
+                    controller: _nameController,
+                    placeHolder: TextConstants.fullNamePlaceholder,
+                  )),
               if (isNameInvalid)
                 Text(TextConstants.nameShouldContain2Char,
                     style: TextStyle(color: ColorConstants.errorColor)),
@@ -136,9 +135,9 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                   style: TextStyle(fontWeight: FontWeight.w600)),
               SettingsContainer(
                   child: SettingsTextField(
-                controller: _emailController,
-                placeHolder: TextConstants.emailPlaceholder,
-              )),
+                    controller: _emailController,
+                    placeHolder: TextConstants.emailPlaceholder,
+                  )),
               if (isEmailInvalid)
                 Text(TextConstants.emailErrorText,
                     style: TextStyle(color: ColorConstants.errorColor)),
@@ -173,7 +172,7 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                   setState(() {
                     isNameInvalid = !(_nameController.text.length > 1);
                     isEmailInvalid =
-                        !ValidationService.email(_emailController.text);
+                    !ValidationService.email(_emailController.text);
                   });
                   if (!(isNameInvalid || isEmailInvalid)) {
                     if (userName != _nameController.text ||

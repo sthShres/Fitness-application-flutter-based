@@ -64,7 +64,7 @@ dependencies:
   flutter_local_notifications: ^8.0.0
 
   # Image library
-  image_picker: ^0.8.2
+  image_picker: ^0.8.5+3
 
   # Countdown timer
   custom_timer: ^0.0.6
