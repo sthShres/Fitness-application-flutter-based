@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
  
    return MaterialApp(
      debugShowCheckedModeBanner: false,
-     title: 'Fitness',
+     title: 'Fitness assistant',
      theme: ThemeData(
        textTheme:
            TextTheme(bodyText1: TextStyle(color: ColorConstants.textColor)),

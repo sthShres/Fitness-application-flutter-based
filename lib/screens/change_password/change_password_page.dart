@@ -6,7 +6,9 @@ import 'package:flutter_firebase/core/service/validation_service.dart';
 import 'package:flutter_firebase/screens/change_password/bloc/change_password_bloc.dart';
 import 'package:flutter_firebase/screens/common_widgets/fitness_button.dart';
 import 'package:flutter_firebase/screens/common_widgets/fitness_loading.dart';
+
 import 'package:flutter_firebase/screens/common_widgets/settings_container.dart';
+
 import 'package:flutter_firebase/screens/common_widgets/settings_textfield.dart';
 
 import '../../core/const/text_constants.dart';
